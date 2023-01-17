@@ -1,2 +1,2 @@
 # django-otp
-One-time password demo for Django
+One-time password demo utilizing the pyOTP library.
