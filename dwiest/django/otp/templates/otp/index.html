@@ -47,9 +47,20 @@
 {% if otp %}
 <H3>{{otp}}</H3>
 {% endif %}
+
+{% if secret_key_image %}
+<P>
+<Img src="data:image/png;base64,{{secret_key_image}}"/><Br>
+{% endif %}
+
 <P>
 <Form method="post" action="{% url 'otp' %}">
 {% csrf_token %}
+  <Label for="name">Name:</Label>
+  {{form.name}}
+  <Label for="issuer_name">Issuer:</Label>
+  {{form.issuer_name}}
+  <P>
   <Label for="secret_key">Secret Key:</Label>
   {{form.secret_key}}
   <Input type="submit" name="submit" value="Get Password"></Input>
